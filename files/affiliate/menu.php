@@ -1,0 +1,1 @@
+<h2>LeaderBoard</h2> <a href="index2.php">Simple Stats</a> - <a href="index2.php">Detailed Stats</a>

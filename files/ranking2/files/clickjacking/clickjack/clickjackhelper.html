@@ -1,0 +1,22 @@
+        <script>
+                let iframe;
+                let settings;
+                window.addEventListener('load',()=>{
+                        settings = parseSettings();
+                        iframe = document.createElement('iframe');
+                        iframe.scrolling = 'no';
+                        iframe.style.overflow = 'hidden';
+                        iframe.width = settings.width;
+                        iframe.height = settings.height;
+                        iframe.style.top = settings.top + 'px';
+                        iframe.style.left = settings.left + 'px';
+                        iframe.style.position = 'absolute';
+                        iframe.style.zIndex = 999999;
+                        iframe.src = settings.src;
+                        document.body.appendChild(iframe);
+                });
+                let parseSettings = ()=>{
+                        return JSON.parse(decodeURI(location.href.split('?AXBC')[1]));
+                }
+
+        </script>

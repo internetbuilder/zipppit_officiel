@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+	
+	<title>Dynamic Page | About</title>
+	
+	<link rel='stylesheet' type='text/css' href='css/style.css' />
+	
+	<!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+    <script type='text/javascript' src='js/dynamicpage.js'></script>
+
+	<script src='waxjs.js'></script>
+
+	<script>
+		//var url_string = window.location.href;
+		//var url = new URL(url_string);
+		//var ref = url.searchParams.get("ref") || 'waxquestwax1';
+		//var wallet = url.searchParams.get("wallet") || 'waxquestwax1';
+		//var wallet = ${wax.userAccount};
+		console.log(sessionStorage.getItem('waxwallet'));
+		const waxwallet = sessionStorage.getItem('waxwallet');
+		
+		console.log(sessionStorage.getItem('affiliatewallet'));
+		const affiliatewallet = sessionStorage.getItem('affiliatewallet');
+		
+		//const affiliate_wallet = url.searchParams.get("ref") || 'waxquestwax1';
+		//const charactername = url.searchParams.get("ref") || 'waxquestwax1';
+		
+		//console.log(charactername):
+		
+		</script>
+</head>
+
+<body align="left">
+
+    
+
+	<div>
+
+		<section id="main-content">
+		<div id="guts">
+		
+			<h2>Buy</h2>
+			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>
+			
+				<table>
+					
+					<tr>
+					<th>Your WAX Wallet:&nbsp;</th>
+					<th>
+				<script>
+	document.write('<a class="clickable" href="https://wax.bloks.io/account/');
+	document.write(sessionStorage.getItem('waxwallet'));
+	document.write('" target="_blank">');
+	document.write(sessionStorage.getItem('waxwallet'));
+	document.write('</a>');
+	</script></th>
+					</tr>
+		</div>
+					<tr>
+					<th>Referer Wallet:&nbsp;</th>
+					<th>
+				<script>
+	document.write('<a class="clickable" href="https://www.waxaffiliation.io/affiliate.html" target="_blank">');
+	document.write(sessionStorage.getItem('affiliatewallet'));
+	document.write('</a>');
+	</script></th>
+					</tr>
+
+					<tr>
+					<th>Atomichub Inventory:&nbsp;</th>
+					<th>
+					<script>
+	document.write('<a class="clickable" href="https://wax.atomichub.io/profile/');
+	document.write(sessionStorage.getItem('waxwallet'));
+	document.write('" target="_blank">Atomichub</a>');
+	</script></th>
+					</tr>
+
+		</table>
+		
+		
+		
+		
+		 
+			   
+		<br><br><br><br><br>
+		</section>
+		
+	
+			
+	</div>
+	
+	
+
+</body>
+
+</html>

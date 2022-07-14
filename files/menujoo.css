@@ -1,0 +1,10 @@
+html, body {
+    font-family: arial, sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+  #container {
+    padding: 10px;
+    font-size: 1.5em;
+    background: #ffe0db;
+  }

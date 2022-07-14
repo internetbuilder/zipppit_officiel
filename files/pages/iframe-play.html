@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+	<title>WaxQuest</title>
+	<link rel='stylesheet' type='text/css' href='css/style.css' />
+	<!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+    <script type='text/javascript' src='js/dynamicpage.js'></script>
+
+	<script src='waxjs.js'></script>
+
+	<script>
+		//var url_string = window.location.href;
+		//var url = new URL(url_string);
+		//var ref = url.searchParams.get("ref") || 'waxquestwax1';
+		//var wallet = url.searchParams.get("wallet") || 'waxquestwax1';
+		//var wallet = ${wax.userAccount};
+		console.log(sessionStorage.getItem('waxwallet'));
+		const waxwallet = sessionStorage.getItem('waxwallet');
+		
+		console.log(sessionStorage.getItem('affiliatewallet'));
+		const affiliatewallet = sessionStorage.getItem('affiliatewallet');
+		
+		//const affiliate_wallet = url.searchParams.get("ref") || 'waxquestwax1';
+		//const charactername = url.searchParams.get("ref") || 'waxquestwax1';
+		
+		//console.log(charactername):
+		
+		</script>
+</head>
+
+<body align="left">
+
+    
+
+	<div>
+		<section id="main-content">
+		<div id="guts">
+			<h2>WaxQuest</h2>
+			<p>WaxQuest is a multiplayer game inviting WAX users can interact each others in unique world of adventure from your Web browser.
+			</p>
+			<h2>About</h2>
+			<p>WaxQuest is a multiplayer game inviting WAX users can interact each others in unique world of adventure from your Web browser.
+			<script>
+				document.write('<a class="clickable" href="https://wax.bloks.io/account/');
+				document.write(sessionStorage.getItem('waxwallet'));
+				document.write('" target="_blank">');
+				document.write(sessionStorage.getItem('waxwallet'));
+				document.write('</a>');
+				</script>
+				<br>
+				<table>
+					
+					<tr>
+						<th><img src="../wax.svg" alt="WAX" width="40px" height="40px"></th>
+						<th></th>
+						<th><img src="../images/discord.svg" alt="Discord" width="40px" height="40px"></th>
+						<th></th>
+						<th><img src="../images/logo-telegram.png" alt="Telegram" width="40px" height="40px"></th>
+						<th></th>
+						<th><img src="../images/twitter.png" alt="Twitter" width="40px" height="40px"></th>
+						
+						</tr>
+					<tr>
+					<th><a target="_blank" href="#">WAX</a></th>
+					<th>&nbsp;</th>
+					<th><a target="_blank" href="https://discord.gg/NDHTFTJf">Discord</a></th>
+					<th>&nbsp;</th>
+					<th><a target="_blank" href="https://t.me/remixworlds">Telegram</a></th>
+					<th>&nbsp;</th>
+					<th><a target="_blank" href="https://twitter.com/remixworlds">Twitter</a></th>
+					</tr>
+		</table>
+				</p> 
+		</section>
+	</div>
+</body>
+</html>

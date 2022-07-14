@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<!-- meta block -->
+		<title>Poooooooooopup with custom css - DHTMLX Popup</title>
+		<meta name="description" content="">
+		
+		<!-- ranking -->
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="codebase/assets/css/auxiliary_controls.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- ranking -->
+		<!-- dhtmlx -->
+		<script type="text/javascript" src="../../codebase/suite.js?v=7.3.3"></script>
+		<link rel="stylesheet" href="../../codebase/suite.css?v=7.3.3">
+		
+		<link rel="stylesheet" href="../common/index.css?v=7.3.3">
+		
+		<style>
+			.custom-class {
+				margin-top: 0px;
+				color: #fff;
+				font-size: 25px;
+				line-height: 1.5;
+				background-color: #000000;
+				box-shadow: 5px 5px 55px -15px rgba(2, 136, 209, 1);
+				-webkit-animation: opacity .4s ease-in-out forwards;
+				animation: opacity .4s ease-in-out forwards;
+			}
+			@-webkit-keyframes opacity {
+				0% {
+					opacity: 0;
+				}
+
+				100% {
+					opacity: 1;
+				}
+			}
+			@keyframes opacity {
+				0% {
+					opacity: 0;
+				}
+
+				100% {
+					opacity: 1;
+				}
+			}
+		</style>
+		<!-- dhtmlx -->
+	</head>
+	<body class="container">
+		<header class="dhx_sample-header">
+			<div class="dhx_sample-header__main">
+				<nav class="dhx_sample-header__breadcrumbs">
+					<ul class="dhx_sample-header-breadcrumbs">
+								<li class="dhx_sample-header-breadcrumbs__item">
+									<a href="../index.html" class="dhx_sample-header-breadcrumbs__link">FreeCityGame</a>
+								</li>
+							</ul>
+				</nav>
+				<h1 class="dhx_sample-header__title">
+					<div class="dhx_sample-header__content">
+					
+
+<tr>
+	<td>Menu</td>
+</tr>
+<tr>
+	<td>Menu</td>
+</tr>
+<tr>
+	<td>
+		<button id="show">Claim RMX</button>
+	</td>
+</tr>
+
+					</div>
+				</h1>
+			</div>
+		</header>
+		
+		<script>
+			const popup = new dhx.Popup({
+    css: "dhx_widget--bordered"
+});
+
+			popup.attachHTML("<div style='padding: 0px; text-align: center'> <iframe src='https://claim.remixworlds.com/' title='Claim RMX Token' height='600' width='325' ></iframe></div>");
+document.querySelector("#show").addEventListener("click", function () {
+    popup.show("show");
+			});
+
+			const dhxWindow = new dhx.Window({
+    width: 440,
+    height: 520,
+    title: "Window"
+});
+
+const list = new dhx.List(null, {
+    css: "dhx_widget--bordered"
+});
+
+list.data.parse(dataset);
+
+dhxWindow.attach(list)
+dhxWindow.show();
+		</script>
+		<center>
+			<!-- ranking -->
+			<div hidden="hidden" class="form-group">
+				<label for="eos-account"><strong>Network</strong></label>
+				<select onchange="getProducers()" class="form-control" id="network">
+					<option value="https://api.hivebp.io">WAX Mainnet</option>
+				</select>
+			</div>
+			<div hidden="hidden" class="form-group">
+				<label for="eos-account"><strong>Account Name</strong></label>
+				<input id="eos-account" class="form-control" placeholder="EOS Account">
+			</div>
+			<div hidden="hidden" class="form-group">
+				<input type="radio" name="signing-method" onchange="toggleKeyInput()" value="key" checked>
+				<label>Private Key</label>
+				<input id="private-key" class="form-control" placeholder="Private key">
+				</div>
+			</div>
+			
+			<h2>Ranking</h2>
+			menu
+			
+			<div class="form-group">
+				<input type="search" id="filter-prods" class="form-control" placeholder="Filter Players" onkeyup="filterProds()">
+			</div>
+			<table id="block-producers" class="table">
+				<thead>
+					<tr>
+					<th>Rank</th>
+					<th>Votes/Rewards</th>
+					
+				</tr></thead>
+				<tbody></tbody>
+			</table>
+			<script src="eosjs-browser.js"></script>
+			<script src="main.js"></script>
+	       <!-- ranking -->
+		<tr>
+			<td><script>
+				const dataset2 = [
+					{ text: "1. dhtmlxCalendar" },
+					{ text: "2. dhtmlxChart" },
+					{ text: "3. dhtmlxColorPicker" },
+					{ text: "4. dhtmlxCombo" },
+					{ text: "5. dhtmlxContextMenu (new)" },
+					{ text: "6. dhtmlxDataView" },
+					{ text: "7. dhtmlxForm" },
+					{ text: "8. dhtmlxGrid" },
+					{ text: "9. dhtmlxLayout" },
+					{ text: "10. dhtmlxList" },
+					{ text: "11. dhtmlxMenu" },
+					{ text: "12. dhtmlxMessage" },
+					{ text: "13. dhtmlxPopup" },
+					{ text: "14. dhtmlxRibbon" },
+					{ text: "15. dhtmlxSidebar" },
+					{ text: "16. dhtmlxSlider" },
+					{ text: "17. dhtmlxTabbar" },
+					{ text: "18. dhtmlxTimePicker" },
+					{ text: "19. dhtmlxToolbar" },
+					{ text: "20. dhtmlxTooltip" },
+					{ text: "21. dhtmlxTree" },
+					{ text: "22. dhtmlxWindow" }
+				];Menu
+			</script></td>
+		</tr>
+		<tr>
+			<td><script>
+				const dataset = [
+					{ text: "1. dhtmlxCalendar" },
+					{ text: "2. dhtmlxChart" },
+					{ text: "3. dhtmlxColorPicker" },
+					{ text: "4. dhtmlxCombo" },
+					{ text: "5. dhtmlxContextMenu (new)" },
+					{ text: "6. dhtmlxDataView" },
+					{ text: "7. dhtmlxForm" },
+					{ text: "8. dhtmlxGrid" },
+					{ text: "9. dhtmlxLayout" },
+					{ text: "10. dhtmlxList" },
+					{ text: "11. dhtmlxMenu" },
+					{ text: "12. dhtmlxMessage" },
+					{ text: "13. dhtmlxPopup" },
+					{ text: "14. dhtmlxRibbon" },
+					{ text: "15. dhtmlxSidebar" },
+					{ text: "16. dhtmlxSlider" },
+					{ text: "17. dhtmlxTabbar" },
+					{ text: "18. dhtmlxTimePicker" },
+					{ text: "19. dhtmlxToolbar" },
+					{ text: "20. dhtmlxTooltip" },
+					{ text: "21. dhtmlxTree" },
+					{ text: "22. dhtmlxWindow" }
+				];
+			</script></td>
+		</tr>
+		
+
+
+
+
+	</center>
+	</body>
+</html>

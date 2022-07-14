@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<style>
+		  #popupcontent{
+   position: absolute;
+   visibility: hidden;
+   overflow: hidden;
+   border:1px solid #CCC;
+   background-color:#F9F9F9;
+   border:1px solid #333;
+   padding:5px;
+}
+		</style>
+	</head>
+	<body>
+	<div id="popupcontent">This is a popup window!</div>
+	
+	<script>
+	  var popUp = document.getElementById("popupcontent");
+	   popUp.style.top = "30%";
+	   popUp.style.left = "50%";
+	   popUp.style.width = w + "px";
+	   popUp.style.height = h + "px";
+	   
+	     if (baseText == null) baseText = popUp.innerHTML;
+   popUp.innerHTML = baseText + 
+      "<div id=\"statusbar\"><button onclick=\"hidePopup();\">Close window<button></div>";
+ 
+ var baseText = null;
+ 
+function showPopup(w,h){
+   var popUp = document.getElementById("popupcontent");
+ 
+   popUp.style.top = "200px";
+   popUp.style.left = "200px";
+   popUp.style.width = w + "px";
+   popUp.style.height = h + "px";
+ 
+   if (baseText == null) baseText = popUp.innerHTML;
+   popUp.innerHTML = baseText + 
+      "<div id=\"statusbar\"><button onclick=\"hidePopup();\">Close window<button></div>";
+ 
+   var sbar = document.getElementById("statusbar");
+   sbar.style.marginTop = (parseInt(h)-40) + "px";
+   popUp.style.visibility = "visible";
+}
+
+function hidePopup(){
+   var popUp = document.getElementById("popupcontent");
+   popUp.style.visibility = "hidden";
+}
+	</script>
+	
+	<a href="#" onclick="showPopup(300,200);" >Open popup</a>
+
+   <script>var myHeaders = new Headers();
+      myHeaders.append("API-key", "0cEaOQwekJblDXmoHxRyUAfCWz4TG7Ku");
+      
+      var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+      };
+      
+      fetch("https://eos.nownodes.io/v1/chain/get_info", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));</script>
+
+
+
+
+	</body>
+</html>

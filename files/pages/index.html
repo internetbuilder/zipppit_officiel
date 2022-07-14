@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+	
+	<title>Dynamic Page | Home</title>
+	
+	<link rel='stylesheet' type='text/css' href='css/style.css' />
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+    <script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
+    <script type='text/javascript' src='js/dynamicpage.js'></script>
+
+	<script src='waxjs.js'></script>
+
+	<script>
+		//var url_string = window.location.href;
+		//var url = new URL(url_string);
+		//var ref = url.searchParams.get("ref") || 'waxquestwax1';
+		//var wallet = url.searchParams.get("wallet") || 'waxquestwax1';
+		//var wallet = ${wax.userAccount};
+		console.log(sessionStorage.getItem('waxwallet'));
+		const waxwallet = sessionStorage.getItem('waxwallet');
+		
+		console.log(sessionStorage.getItem('affiliatewallet'));
+		const affiliatewallet = sessionStorage.getItem('affiliatewallet');
+		
+		//const affiliate_wallet = url.searchParams.get("ref") || 'waxquestwax1';
+		//const charactername = url.searchParams.get("ref") || 'waxquestwax1';
+		
+		//console.log(charactername):
+		
+		</script>
+</head>
+
+<body>
+
+
+	<div id="page-wrap">
+
+        <header>
+		  	<h2>
+				&nbsp;&nbsp;&nbsp;Wallet: <script>
+				document.write(sessionStorage.getItem('waxwallet'));
+				  </script>
+		</h2>	
+		  <nav>
+		      <ul class="group">
+		          <li><a href="index.html">About</a></li>
+				  <li><a href="profile.html">Profile</a></li>
+		          <li><a href="ranking.html">Ranking</a></li>
+		      </ul>
+		  </nav>
+		</header>
+		
+		<section id="main-content">
+		<div id="guts">
+		
+		  <h2>Home</h2>
+		  <p><script>
+			document.write(sessionStorage.getItem('waxwallet'));
+			  </script> Pellentesque habitant morbi tristique senectus et netus et malesuada. Aenean ultricies mi vitae est. 
+			  
+			  <br>
+			  <script>
+				document.write('<a class="clickable" href="https://wax.bloks.io/account/');
+				document.write(sessionStorage.getItem('waxwallet'));
+				document.write('" target="_blank">');
+				document.write(sessionStorage.getItem('waxwallet'));
+				document.write('</a>');
+				</script>
+		  </p> 
+		</div>
+		</section>
+	</div>
+	
+
+</body>
+
+</html>
