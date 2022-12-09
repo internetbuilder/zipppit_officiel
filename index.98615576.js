@@ -22,7 +22,9 @@ function s(n){let r=0;const o=i=>{r=i,n.innerHTML=`Subscribe for 5$/month`};n.ad
     <button id="counter" type="button"></button>
   </a>
   </div>
-
+  <div id="overlay">
+  <div id="text">Overlay Text</div>
+</div>
   <!--
 
   -->
