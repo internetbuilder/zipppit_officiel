@@ -18,13 +18,13 @@ function s(n){let r=0;const o=i=>{r=i,n.innerHTML=`Subscribe for 5$/month`};n.ad
       or your exchange.
     </p>
     <div class="card">
-<a href="#" target="_blank">
+<a href="#" onclick="openNav()">
     <button id="counter" type="button"></button>
   </a>
   </div>
-  <span onclick="openNav()">open</span>
+  
   <!--
-
+<span onclick="openNav()">open</span>
   -->
      
     
