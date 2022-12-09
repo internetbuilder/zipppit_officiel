@@ -6,8 +6,8 @@ return e.integrity&&(t.integrity=e.integrity),e.referrerpolicy&&(t.referrerPolic
   <div>
    
     <div class="card">
-    <a href="https://bit.ly/zipppit-clickout" target="">
-    <button id="counter" type="button"></button>
+    <a href="https://bit.ly/zipppit" target="_blank">
+    <button id="counter" type="button" onclick="openNav()"></button>
   </a>
 
     </div>

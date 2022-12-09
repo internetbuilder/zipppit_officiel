@@ -24,10 +24,37 @@
 
     -->
     
-    <div id="app">
-  
-</div>
+    <div id="app"></div>
+    <!-- The overlay -->
+<div id="myNav" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <!-- Overlay content -->
+  <div class="overlay-content">
     
+    <p class="read-the-docs">
+    <strong>...</strong>
+    <br>
+      ...
+    </p>
+    
+  </div>
+
+</div>
+
+<script>
+  /* Open when someone clicks on the span element */
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
   
 
 <div id="torrent-scanner-popup" style="display: none;"></div>
