@@ -6,8 +6,8 @@
     
     <h1>ZipppIT!</h1>
     <div class="card">
-    <a href="https://bit.ly/trafficadbar33" target="_blank">
-    <button id="counter" type="button"></button>
+    xxx xxxx <a href="https://bit.ly/trafficadbar33" target="_blank">
+    
   </a>
      
     </div>
