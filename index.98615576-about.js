@@ -5,14 +5,20 @@
     </a>
     
     <h1>ZipppIT!</h1>
-    <div class="card">
-    xxx xxxx <a href="https://bit.ly/trafficadbar33" target="_blank">
     
+    
+
+  <!--
+<div class="card">
+<a href="https://bit.ly/trafficadbar33" target="_blank">
+    <button id="counter" type="button"></button>
   </a>
+  </div>
+  -->
      
-    </div>
+    
     <p class="read-the-docs">
-      Click on the logo to learn more
+      Visitor's Exchange
     </p>
   </div>
 `;s(document.querySelector("#counter"));
