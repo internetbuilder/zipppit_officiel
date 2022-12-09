@@ -7,7 +7,7 @@ function s(n){let r=0;const o=i=>{r=i,n.innerHTML=`Subscribe for 5$/month`};n.ad
     
     <h1>ZipppIT!</h1>
     <p class="read-the-docs">
-    Each Month your receive
+    <strong>Each Month your receive</strong>
     <br>
     25000 Real Visitor's
       <br>
@@ -16,7 +16,7 @@ function s(n){let r=0;const o=i=>{r=i,n.innerHTML=`Subscribe for 5$/month`};n.ad
       English
     </p>
     <div class="card">
-<a href="https://bit.ly/trafficadbar33" target="_blank">
+<a href="#" target="_blank">
     <button id="counter" type="button"></button>
   </a>
   </div>
