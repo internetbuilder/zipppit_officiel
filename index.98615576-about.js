@@ -2,18 +2,20 @@
 function s(n){let r=0;const o=i=>{r=i,n.innerHTML=`Subscribe for 5$/month`};n.addEventListener("click",()=>o(r+1)),o(0)}document.querySelector("#app").innerHTML=`
   <div>
     <a href="about.html" target="">
-      <img src="/vite.svg" class="logo" alt="ZippyTraffic" />
+      <img src="/vite.svg" class="logo" alt="ZipppIT" />
     </a>
     
     <h1>ZipppIT!</h1>
     <p class="read-the-docs">
     <strong>Each Month your receive</strong>
     <br>
-    25000 Real Visitor's
+    25000 Real English Visitor's
       <br>
       from Mobile & PC
       <br>
-      English
+      for your website
+      <br>
+      or your exchange.
     </p>
     <div class="card">
 <a href="#" target="_blank">
