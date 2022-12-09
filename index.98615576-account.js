@@ -10,17 +10,17 @@ function s(n){let r=0;const o=i=>{r=i,n.innerHTML=`Subscribe for 5$/month`};n.ad
     <strong>Thanks</strong>
     <br>
     Enter your destination url
-    <br>
+    <br><br>
     HERE
     </p>
-    <div class="card">
+    
+  
+  <!--
+<div class="card">
     <a href="https://buy.stripe.com/bIY4i7cDTaDJe5OcMN" target="_blank">
     <button id="counter" type="button"></button>
   </a>
     </div>
-  
-  <!--
-
   -->
      
     
