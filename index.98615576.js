@@ -23,16 +23,6 @@ function s(n){let r=0;const o=i=>{r=i,n.innerHTML=`Subscribe for 5$/month`};n.ad
   </a>
   </div>
 
-  <div id="overlay">xxx</div>
-  <script>
-    function on() {
-    document.getElementById("overlay").style.display = "block";
-  }
-  
-  function off() {
-    document.getElementById("overlay").style.display = "none";
-  }
-  </script>
   <!--
 
   -->
