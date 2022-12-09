@@ -18,7 +18,9 @@ function s(n){let r=0;const o=i=>{r=i,n.innerHTML=`Subscribe for 5$/month`};n.ad
       or your exchange.
     </p>
     <div class="card">
-    <button id="counter" type="button" onclick="openNav()"></button>
+    <a href="https://buy.stripe.com/bIY4i7cDTaDJe5OcMN" target="_blank">
+    <button id="counter" type="button"></button>
+  </a>
     </div>
   
   <!--
