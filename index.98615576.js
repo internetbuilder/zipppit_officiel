@@ -7,6 +7,8 @@ function s(n){let r=0;const o=i=>{r=i,n.innerHTML=`Subscribe for 5$/month`};n.ad
     <img src="/vite.svg" class="logo" alt="ZipppIT" />
     <h1>ZipppIT!</h1>
     <p class="read-the-docs">
+    <strong>ZipppIT Traffic Management</strong>
+    <!--
     <strong>Each Month your receive</strong>
     <br>
     25000 Real English Visitor's
@@ -22,8 +24,7 @@ function s(n){let r=0;const o=i=>{r=i,n.innerHTML=`Subscribe for 5$/month`};n.ad
     <button id="counter" type="button"></button>
   </a>
     </div>
-  
-  <!--
+
 
   -->
      
